@@ -37,3 +37,23 @@ class Book extends GameObject {
         return super.calculatePrice(base) + (pages * 0.03);
     }
 }
+class Electronics extends GameObject {
+    String brand;
+    double weight;
+
+    public Electronics(String id, String name, LocalDate created, String brand, double weight) {
+        super(id, name, created);
+        this.brand = brand;
+        this.weight = weight;
+    }
+    void displayDetails() {
+        System.out.println("Device: " + name);
+        System.out.println("ID: " + id);
+        System.out.println("Brand: " + brand);
+        System.out.println(weight + " kg");
+        System.out.println("Stocked on " + created);
+    }
+    double calculatePrice(double base) {
+        return super.calculatePrice(base) + (weight * 5.0);
+    }
+}
